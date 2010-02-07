@@ -1,13 +1,43 @@
-Acs
+Acs: Autocompleter Server
 ===
 
-Introduction goes here.
+This is a flexible API for implementing autocompleter backends with-in a Rails app, it provides a concise way of exposing actions in your appication that yield specific JSON formats for autocompleter client's to digest.  
 
+A POST request like:
+  dogs/acc_jquery_basic.json?q=golden
+(by default) result in returned JSON like:
+  [{name:"golden retriever", species:"goldy species"},
+   {name:"golden donky", species:"goldy donky species"},
+   ...
+   ...
+  ]
+
+If clustering is enabled:
+  dogs/acc_jquery_clustered.json?q=golden
+would result in:
+[{"Dog":{matches: 28, average_score: 90,
+  results:[
+    {name:"golden retriever", species:"goldy species"},
+    {name:"golden donky", species:"goldy donky species"},
+    ...
+    ...
+  ]}
+ },
+ {"Thing":{matches: 19, average_score: 52,
+  results:[
+    {name:"garden hoe"},
+    {name:"golden donky"},
+    ...
+    ...
+  ]}
+ },
+ ...for each "clustered" data class
+]
 
 Example
 =======
 
-Example goes here.
+Nothing yet.
 
 
 Copyright (c) 2010 [name of plugin creator], released under the MIT license
