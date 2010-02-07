@@ -1,7 +1,16 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+<% 
+count=0
+s=<<-EOS
+poo
+thing
+asdf
+ere
+r
+erere
 
-one:
-  name: MyString
 
-two:
-  name: MyString
+EOS
+s.split(/$/).map {|x| x.strip}.compact.each do |name| %> 
+n<%= count %>:
+  name: <%= name %>
+<% end %>

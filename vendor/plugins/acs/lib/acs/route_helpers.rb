@@ -11,6 +11,11 @@ module Acs
           rescue NameError => e
             raise "could not find a controller named #{cont_klass_name}."
           end
+          # Inject into controller class          
+          cont_klass.class_eval do
+            def self.exposes_acs_api?; end
+            def exposes_acs_api?; end
+          end
         end
       end
     end
