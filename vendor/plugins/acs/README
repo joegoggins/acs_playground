@@ -37,16 +37,35 @@ POST /dogs/jquery_clustered/golden
  ...for each "clustered" data class...
 ]
 
-POST /dogs/jquery_basic
 
-acs_jquery_basic_submit_path
+CONCEPTS:
+One exposes_acs_api line in routes.rb equates to:
+* an action being dynamically generated in a controller somewhere
 
-acs_jquery_basic_render_path
-=> renders the JavaScript widget assigned to jquery_basic
-   yields content for header
-   This helper will come from the acc plugin
+TYPES OF OUTPUT DATA:
+* Flat List: A regular old json array of objects
+* Flat List with Tags: By posting additional params like
+  bla?acs_tag_age_above=25, which will augment each item with json like:
+    acs_tags:["age_above_25"], tags will be added by passing each item to model instance method
+    called: acs_tag_age_above(n), and it will inspect itself and return true if it has (say for example)
+    an age column greater than 25.
+* Filtered Flat List, URL like:
+  bla?acs_where_age_above=25: 
+    When constructing the database query for the full-text search on "bla"
+    it adds "AND age > 25" to the SQL.  
 
-search mode vs selection mode vs select and hide in div mode
+Tagging and filtering options will need to be exposed in the API by doing something like:
+exposes_acs_api ..., :tag_methods => {:age_above, # looks for a method on model
+:age_below => lambda {|val| age < val},
+:filter_methods => {...NOT SURE HOW THIS WILL WORK...named_scope references???}
+
+}
+
+* Clustered List: exposes_acs_api expects a :models option that specifies N models that all
+  implement_acs_api, yields more complex JSON structure.
+
+
+before an item
 
 Example
 =======

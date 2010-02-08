@@ -9,7 +9,7 @@ class DogsControllerTest < ActionController::TestCase
     assert @controller.respond_to? :acs_example1
   end
   
-  test "gets json from jquery_basic" do
+  test "gets json from acs_example1" do
     post :acs_example1, :q => 'gold'
     assert_response :success
   end
