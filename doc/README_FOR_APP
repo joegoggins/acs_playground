@@ -1,2 +1,23 @@
-Use this README file to introduce your application and point to useful places in the API for learning more.
-Run "rake doc:app" to generate API documentation for your models, controllers, helpers, and libraries.
+Message to Matt and Pete, bout intent on this:
+
+Ideally, I'd like to build a well tested plugin that provides a nice mechanism for others to contribute:
+* Db specific implementations
+* Front end clients
+* Search "secret sauce" modules for each db specific implementation (these methods would be the magic that pre-processes :q and constructs sql)
+
+A few ideas I'd like to tinker with here and assess feasibility of:
+* Clustered auto-completion: Conduct a search accross N models and serve the top X most relevant results for each model.
+* Caching strategies: Vanilla action caching, memcached, others?
+* Integrate with my weighted_search plugin (haven't open sourced yet)
+* Integration with multiple ORM tools, ActiveRecord, DataMapper, etc
+* Eventual actual release with Rails 3
+
+If you wanna talk shop 'bout this, let's get together for lunch (Pete), or holla 612 978 8991 (Matt) i think this project will be fun.
+
+I'm beginning the process of integrating Sanction UI and my forked Sanction into an app this week
+It's definitely stable, but the finishing touches will come after integrating it in a couple apps, I'll let you know when their is a release.
+Also, at some point, it'd be nice to merge our sanction's together, I forked just so I could get nuts in development, my intent is not to keep my fork around, I'd rather contribute to your repo.
+
+Cool.
+
+-j

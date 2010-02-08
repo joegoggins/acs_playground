@@ -1,0 +1,41 @@
+
+
+OLD CRUFT BELOW
+
+  # The resource is a list key'ed by q and the user_id
+#
+# /index is all queries sorted by most recent
+# /show is a list of items from given q
+#   first tries to hit memcached, if miss, then does the same as /create
+# /new is a form widget in an iframe or just html snippet
+# /edit is a form widget pre-populated by items
+# /update recreates the list if it exists
+# /destroy delete's the list for the user
+
+# CLUSTERED LIST
+# /index and /show first try to hit memcached
+# then if nothing there, p
+# JSON DATA
+# show list
+# show clustered set of lists
+# show preselected set of items from list
+# show selected set of items from a clustered set of lists
+
+# WIDGET
+# Display HTML & Javascript
+# In a self contained an iframe (for embedding in other pages)
+#
+
+# show
+# about
+
+# TODO: CONTINUE HERE: SHOULD INJECT SOMETHING LIKE:
+# def jquery_basic
+#             @dogs = Dog.acs_find(params)
+#             respond_to do |format|
+#               format.json {render :partial => 'dogs/acs/jquery_basic'}
+#             end
+#           end
+
+# Inject the action method that JavaScript clients will point at
+#

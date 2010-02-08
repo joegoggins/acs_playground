@@ -572,3 +572,362 @@ Migrating to CreateDogs (20100207210810)
   [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100207210810')[0m
   [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" LIMIT 1[0m
   [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateDogs (20100207210810)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "species" varchar(255), "keywords" text) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100207210810')[0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" LIMIT 1[0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateDogs (20100207210810)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "species" varchar(255), "keywords" text) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100207210810')[0m
+  [4;36;1mDog Load (0.4ms)[0m   [0;1mSELECT * FROM "dogs" LIMIT 1[0m
+  [4;35;1mDog Load (0.3ms)[0m   [0mSELECT * FROM "dogs" ORDER BY dogs.id DESC LIMIT 1[0m
+  [4;36;1mDog Load (0.3ms)[0m   [0;1mSELECT * FROM "dogs" LIMIT 1[0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" ORDER BY dogs.id DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateDogs (20100207210810)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "species" varchar(255), "keywords" text) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100207210810')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateDogs (20100207210810)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "species" varchar(255), "keywords" text) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100207210810')[0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" LIMIT 1[0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateDogs (20100207210810)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "species" varchar(255), "keywords" text) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100207210810')[0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" LIMIT 1[0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateDogs (20100207210810)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "species" varchar(255), "keywords" text) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100207210810')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateDogs (20100207210810)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "species" varchar(255), "keywords" text) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100207210810')[0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" LIMIT 1[0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" LIMIT 1[0m
+
+
+Processing DogsController#jquery_basic (for 0.0.0.0 at 2010-02-07 22:57:44) [POST]
+  Parameters: {"q"=>"gold"}
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" LIMIT 1[0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" ORDER BY dogs.id DESC LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateDogs (20100207210810)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "species" varchar(255), "keywords" text) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100207210810')[0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" LIMIT 1[0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" LIMIT 1[0m
+
+
+Processing DogsController#jquery_basic (for 0.0.0.0 at 2010-02-07 22:58:34) [POST]
+  Parameters: {"q"=>"gold"}
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" LIMIT 1[0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" ORDER BY dogs.id DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateDogs (20100207210810)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "species" varchar(255), "keywords" text) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100207210810')[0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" LIMIT 1[0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateDogs (20100207210810)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "species" varchar(255), "keywords" text) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100207210810')[0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" LIMIT 1[0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" LIMIT 1[0m
+
+
+Processing DogsController#acs_example1 (for 0.0.0.0 at 2010-02-07 23:03:22) [POST]
+  Parameters: {"q"=>"gold"}
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" LIMIT 1[0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" ORDER BY dogs.id DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateDogs (20100207210810)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "species" varchar(255), "keywords" text) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100207210810')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateDogs (20100207210810)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "species" varchar(255), "keywords" text) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100207210810')[0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" LIMIT 1[0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" LIMIT 1[0m
+
+
+Processing DogsController#acs_example1 to json (for 0.0.0.0 at 2010-02-07 23:10:21) [POST]
+  Parameters: {"q"=>"gold"}
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" LIMIT 1[0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" ORDER BY dogs.id DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateDogs (20100207210810)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "species" varchar(255), "keywords" text) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100207210810')[0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" LIMIT 1[0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" LIMIT 1[0m
+
+
+Processing DogsController#acs_example1 to json (for 0.0.0.0 at 2010-02-07 23:11:50) [POST]
+  Parameters: {"q"=>"gold"}
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" LIMIT 1[0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" ORDER BY dogs.id DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateDogs (20100207210810)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "species" varchar(255), "keywords" text) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100207210810')[0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" LIMIT 1[0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateDogs (20100207210810)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "species" varchar(255), "keywords" text) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100207210810')[0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" LIMIT 1[0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" LIMIT 1[0m
+
+
+Processing DogsController#acs_example1 (for 0.0.0.0 at 2010-02-07 23:13:44) [POST]
+  Parameters: {"q"=>"gold"}
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" LIMIT 1[0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" ORDER BY dogs.id DESC LIMIT 1[0m
+Completed in 3ms (View: 0, DB: 13) | 200 OK [http://test.host/acs_example1_json/gold]
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateDogs (20100207210810)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "species" varchar(255), "keywords" text) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100207210810')[0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" LIMIT 1[0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" LIMIT 1[0m
+
+
+Processing DogsController#acs_example1 (for 0.0.0.0 at 2010-02-07 23:14:08) [POST]
+  Parameters: {"q"=>"gold"}
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" LIMIT 1[0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" ORDER BY dogs.id DESC LIMIT 1[0m
+Completed in 3ms (View: 0, DB: 13) | 200 OK [http://test.host/acs_example1_json/gold]
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateDogs (20100207210810)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "species" varchar(255), "keywords" text) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100207210810')[0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" LIMIT 1[0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" LIMIT 1[0m
+
+
+Processing DogsController#acs_example1 (for 0.0.0.0 at 2010-02-07 23:14:25) [POST]
+  Parameters: {"q"=>"gold"}
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" LIMIT 1[0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" ORDER BY dogs.id DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateDogs (20100207210810)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "species" varchar(255), "keywords" text) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100207210810')[0m
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" LIMIT 1[0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" LIMIT 1[0m
+
+
+Processing DogsController#acs_example1 (for 0.0.0.0 at 2010-02-07 23:15:24) [POST]
+  Parameters: {"q"=>"gold"}
+  [4;36;1mDog Load (0.2ms)[0m   [0;1mSELECT * FROM "dogs" LIMIT 1[0m
+  [4;35;1mDog Load (0.2ms)[0m   [0mSELECT * FROM "dogs" ORDER BY dogs.id DESC LIMIT 1[0m
+Completed in 5ms (View: 0, DB: 13) | 200 OK [http://test.host/acs_example1_json/gold]

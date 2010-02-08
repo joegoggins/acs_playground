@@ -6,6 +6,11 @@ class DogsControllerTest < ActionController::TestCase
   end
   
   test "dogs controller exposes a dynamically created method" do
-    assert @controller.respond_to? :jquery_basic
+    assert @controller.respond_to? :acs_example1
+  end
+  
+  test "gets json from jquery_basic" do
+    post :acs_example1, :q => 'gold'
+    assert_response :success
   end
 end

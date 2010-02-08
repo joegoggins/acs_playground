@@ -1,5 +1,9 @@
 ActionController::Routing::Routes.draw do |map|
-  map.exposes_acs_api :controller => "things"
+  map.exposes_acs_api "acs_example1",
+    :controller => "things", 
+    :action => "jquery_basic", 
+    :client => 'jquery_basic' # NOT-IMPLEMENTED Refers to a acc_client plugin at vendor/plugins/acc_<CLIENT_NAME>
+
   map.resources :things
 
   # The priority is based upon order of creation: first created -> highest priority.
