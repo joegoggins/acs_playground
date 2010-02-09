@@ -13,4 +13,14 @@ class DogTest < ActiveSupport::TestCase
   test "responds to worker methods" do
     assert Dog.respond_to? :acs_find
   end
+  
+  test "raises exception if :q or :ids isn't specified" do
+    assert_raise Acs::QOrKRequired do
+      Dog.acs_find()
+    end
+    assert_raise Acs::DoubleQuery do
+      Dog.acs_find({:q => 'bla', :k => '123'})
+    end
+    
+  end
 end

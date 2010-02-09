@@ -37,7 +37,11 @@ POST /dogs/jquery_clustered/golden
  ...for each "clustered" data class...
 ]
 
-
+If switched on, json format can reveal the primary key's of the underlying tables, to
+allow 1-1 look-up's later with an auto-completer
+* results:[
+  {name:"golden retreiver", acs_pk:true}
+]
 CONCEPTS:
 One exposes_acs_api line in routes.rb equates to:
 * an action being dynamically generated in a controller somewhere
@@ -54,6 +58,8 @@ TYPES OF OUTPUT DATA:
     When constructing the database query for the full-text search on "bla"
     it adds "AND age > 25" to the SQL.  
 
+
+
 Tagging and filtering options will need to be exposed in the API by doing something like:
 exposes_acs_api ..., :tag_methods => {:age_above, # looks for a method on model
 :age_below => lambda {|val| age < val},
@@ -65,7 +71,23 @@ exposes_acs_api ..., :tag_methods => {:age_above, # looks for a method on model
   implement_acs_api, yields more complex JSON structure.
 
 
-before an item
+API controller params:
+  :q  	Query, what the user typed                               
+ OR
+  :ids  Primary Keys
+		ids=Thing|123,Dog|898433-332,Person|994 (clustered style)
+		OR
+		ids=431,884,332,553
+  :n  	Number (max) of results                                  
+  :f  	Filter, constrain the DB query further in addition to :q,
+      	f=age_above_25,name_begins_with_Ronda%20Nelson           
+  :t  	Tag, those matching:                                     
+      	t=age_above_15,age_below_40
+
+Server API Configuration
+  :ids  each column on a
+
+
 
 Example
 =======

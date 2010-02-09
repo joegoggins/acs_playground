@@ -1,3 +1,4 @@
 db/schema.rb
 db/test.sqlite3
 log/*
+vendor/plugins/acs/test/app_root/log/in_memory.log
