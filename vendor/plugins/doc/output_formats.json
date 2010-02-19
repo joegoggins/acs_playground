@@ -1,0 +1,90 @@
+/*
+ABOUT
+=====
+These json snippets exemplify the server response format for typical API invocations.
+Use them to build and test autocompleter clients without needing a back-end.
+
+OVERVIEW
+========
+Essentially, there are two types of output, "list" or "cluster".
+For both, they have set of header keys that are both acs api specific and specific to your configuration followed by a results array containing hashes with key's as column names, and values as column values.
+
+ACS API Specific Keys to Know About:
+	Cluster Top Level JSON Keys:
+	  cluster: Specifies a list of resource type's that each list within is comprised of.  
+						 A cluster is a list of lists.
+
+	List Top Level JSON Keys:
+	  list: Specifies the resource type the results list is comprised of
+
+		primary_keys: Specifies a set of JSON keys that when POST'ed via list_from_keys or cluster_from_keys
+		 						  will yield a deterministic single result.  
+	
+		keys: Specifies a set of JSON keys that will yield deterministic results when POST'ed 
+					via list_from_keys or cluster_from_keys.  Order does NOT matter here.
+	              
+	Result JSON Keys:					  
+	  acs_tags: If the tags parameter is specified in the request, each result that has tag matches
+	            to the specified criteria will have this key.  A result with tag matches might look like:
+	              {name:"Golden Retriever", acs_tags:['pure_bread_true','phylum_equals_doggy_dang']}
+
+
+
+TODO: WRITE ABOUT TAGS AND FILTERS:
+* Flat List with Tags: By posting additional params like
+  bla?acs_tag_age_above=25, which will augment each item with json like:
+    acs_tags:["age_above_25"], tags will be added by passing each item to model instance method
+    called: acs_tag_age_above(n), and it will inspect itself and return true if it has (say for example)
+    an age column greater than 25.
+* Filtered Flat List, URL like:
+  bla?acs_where_age_above=25: 
+    When constructing the database query for the full-text search on "bla"
+    it adds "AND age > 25" to the SQL.  
+
+EXAMPLE 1. A list from a search for "golden"
+==========
+:list
+POST dogs/jquery_basic/list/golden
+*/
+  {list:"Dog",
+   primary_keys:['id'],
+   keys:['id'],
+   results:[
+   	 {id:1,  name:"golden retriever", species:"goldy species"},
+	   {id:5,  name:"golden donky", species:"goldy donky species"},
+	   {id:10, name:"golden dangler", species:"the goldest of them all"}
+   ]
+  }
+
+
+/*
+EXAMPLE 2. A clustered list from a search of "golden"
+==========
+:cluster
+POST /jquery_basic/cluster/golden
+*/
+
+  {cluster:"Dog,Thing"
+   average_score: 19,
+   count: 6,
+   results:[
+     {list:"Dog"
+      primary_keys:['id'],
+		  keys:['id'],
+		  results:[
+		   {id:1,  name:"golden retriever", species:"goldy species"},
+			 {id:5,  name:"golden donky", species:"goldy donky species"},
+			 {id:10, name:"golden dangler", species:"the goldest of them all"}
+		  ]
+		 },
+		 {list:"Thing"
+      primary_keys:['id'],
+		  keys:['id'],
+		  results:[
+		   {id:1,  name:"garden hoe", species:"goldy species"},
+			 {id:5,  name:"golden donkyy", species:"goldy donky species"},
+			 {id:10, name:"golden dangler", species:"the goldest of them all"}
+		  ]
+		 }
+   ]
+  }

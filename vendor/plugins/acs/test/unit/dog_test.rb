@@ -21,6 +21,5 @@ class DogTest < ActiveSupport::TestCase
     assert_raise Acs::DoubleQuery do
       Dog.acs_find({:q => 'bla', :k => '123'})
     end
-    
   end
 end

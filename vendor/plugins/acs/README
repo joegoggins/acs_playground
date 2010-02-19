@@ -1,62 +1,60 @@
-given:
-
-dogs/jquery_basic/index?q=
-
-dogs/jquery_basic/new
-
 Acs: Autocompleter Server
-===
+=========================
 
-This is a flexible API for implementing autocompleter backends with-in a Rails app, it provides a concise way of exposing actions in your appication that yield specific JSON formats for autocompleter client's to digest.  
+A flexible API for implementing autocompleter's in a Rails app.  
 
-EXAMPLE:
+It provides a concise way of exposing its own nested RESTful controller and actions in your appication that yield specific JSON formats for autocompleter client's to digest.
 
-POST dogs/jquery_basic/golden
-=>
-  [{name:"golden retriever", species:"goldy species"},
-   {name:"golden donky", species:"goldy donky species"},
-   ...
-  ]
+It comes with an autocompleter client install script, which allow you to easily install
+different autocompleter flavors to your liking.
 
-POST /dogs/jquery_clustered/golden
-=>
-[{"Dog":{matches: 28, average_score: 90,
-  results:[
-    {name:"golden retriever", species:"goldy species"},
-    {name:"golden donky", species:"goldy donky species"},
-    ...
-  ]}
- },
- {"Thing":{matches: 19, average_score: 52,
-  results:[
-    {name:"garden hoe"},
-    {name:"golden donky"},
-    ...
-  ]}
- },
- ...for each "clustered" data class...
-]
+INSTALL
+=======
 
-If switched on, json format can reveal the primary key's of the underlying tables, to
-allow 1-1 look-up's later with an auto-completer
-* results:[
-  {name:"golden retreiver", acs_pk:true}
-]
-CONCEPTS:
-One exposes_acs_api line in routes.rb equates to:
-* an action being dynamically generated in a controller somewhere
+1. 
+Add this to your routes.rb:
+  map.exposes_acs_api "jquery_basic",
+    :controller => "dogs",
+    :action => "acs_example1", 
+    :client => '' # NOT-
 
-TYPES OF OUTPUT DATA:
-* Flat List: A regular old json array of objects
-* Flat List with Tags: By posting additional params like
-  bla?acs_tag_age_above=25, which will augment each item with json like:
-    acs_tags:["age_above_25"], tags will be added by passing each item to model instance method
-    called: acs_tag_age_above(n), and it will inspect itself and return true if it has (say for example)
-    an age column greater than 25.
-* Filtered Flat List, URL like:
-  bla?acs_where_age_above=25: 
-    When constructing the database query for the full-text search on "bla"
-    it adds "AND age > 25" to the SQL.  
+It is equivilent to:
+	map.resources :things do |things|
+	  things.resource :jquery_basic, :only => :none, :member => {
+	    # Expected Params
+	    #   id: The search query or keys string, keys example:
+	    #     431,884,332,553
+	    #				OR
+	    # 		Thing|123,Dog|898433-332,Person|994 (clustered style)
+	    #    n: Max results, TODO: how does this work sith clustered style
+		  #    f: Filter, constrain DB query in addition to the search query, example:
+		  #        f=age_above_9,name_begins_with_joe
+		  #    t: Tag, tag results accordingly if matches exist, example:
+		  #      	t=age_above_15,age_below_40
+	    :list => :post, 
+	    :clustered_list => :post,
+	    :list_from_keys => :post,
+	    :clustered_list_from_keys => :post
+	}
+	end
+
+2.
+Add this to thing.rb
+  implements_acs_api
+
+3.
+Install the jquery_basic acc (in vendor/acs)
+  rake install_client jquery_basic
+
+4.
+Add this to the controller that will utilize the jquery_basic autocompleter client
+  include Acs::Acc::JqueryBasic
+
+5.
+Add this to your view
+  <%= form_for @thing do |f| %>
+    <%= f.autocompleter :jquery_basic, :action => :list %>
+  <% end %>
 
 
 
@@ -74,25 +72,16 @@ exposes_acs_api ..., :tag_methods => {:age_above, # looks for a method on model
 API controller params:
   :q  	Query, what the user typed                               
  OR
-  :ids  Primary Keys
-		ids=Thing|123,Dog|898433-332,Person|994 (clustered style)
-		OR
-		ids=431,884,332,553
-  :n  	Number (max) of results                                  
-  :f  	Filter, constrain the DB query further in addition to :q,
-      	f=age_above_25,name_begins_with_Ronda%20Nelson           
-  :t  	Tag, those matching:                                     
-      	t=age_above_15,age_below_40
+  :k  Primary Keys
+		
+  
 
 Server API Configuration
-  :ids  each column on a
+  :k  each column on a
 
 
-
-Example
+GLOSSARY
 =======
-
-Nothing yet.
 
 
 Copyright (c) 2010 [name of plugin creator], released under the MIT license
