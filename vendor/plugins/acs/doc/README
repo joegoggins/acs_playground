@@ -20,7 +20,7 @@ Add this to your routes.rb:
 
 It is equivilent to:
 	map.resources :things do |things|
-	  things.resource :jquery_basic, :only => :none, :member => {
+	  things.resource :jquery_basic, :only => [:index], :member => {
 	    # Expected Params
 	    #   id: The search query or keys string, keys example:
 	    #     431,884,332,553
@@ -57,6 +57,12 @@ Add this to your view
   <% end %>
 
 
+ABOUT EACH API ACTION
+=====================
+  index: Informs the client what tags and filters are available for the autocompleter
+  list: Given a search query, yield a list of results
+  cluster: Given a search query, yield a list of lists of results
+  list_from_keys: Given a set of key value pairs, yield a determinist 
 
 Tagging and filtering options will need to be exposed in the API by doing something like:
 exposes_acs_api ..., :tag_methods => {:age_above, # looks for a method on model
