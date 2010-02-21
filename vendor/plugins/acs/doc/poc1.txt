@@ -1,0 +1,35 @@
+Proof of Concept 1
+==================
+
+All objects will live under the name space Poc1.
+
+Specs
+=====
+
+###
+script/generate scaffold Poc1::Dogs name:string description:text
+script/generate controller Poc1::Dogs::Jqb index list cluster list_from_keys cluster_from_keys
+
+###
+in routes.rb
+map.resources :dogs do |dogs|
+  dogs.resource :jqb, :only => [:index], 
+    :member => {
+      :list => :post, 
+      :list_from_keys => :post
+    },
+    :controller => 'acs/poc1/dogs/jqb'
+end
+
+== Assumptions
+  Poc1::DogsController (regular scaffold)
+  Poc1::Dogs (regular model)
+  Poc1::Dogs::JqbController (autocompleter controller)
+    # model_class = Poc1::Dogs
+    # injected public methods to Dog: jqb_list, jqb_list_from_keys
+    # customization or overriding happens via optional mixin
+    # at /app/acs/servers/poc1/dogs/jqb/server.rb
+
+== End Result/Goal
+    /dogs/jqb/list/golden => yields valid acs json
+    /dogs/jqb/list_from_keys/1,2 => yields valid acs json

@@ -13,14 +13,14 @@ INSTALL
 
 1. 
 Add this to your routes.rb:
-  map.exposes_acs_api "jquery_basic",
-    :controller => "dogs",
-    :action => "acs_example1", 
-    :client => '' # NOT-
+  map.connect :dogs do |dogs|
+    # This sez--hang a nested singleton "resource" from the dogs controller
+    dogs.exposes_acs_api "jquery_basic"
+  end
 
 It is equivilent to:
-	map.resources :things do |things|
-	  things.resource :jquery_basic, :only => [:index], :member => {
+	map.resources :dogs do |dogs|
+	  dogs.resource :jquery_basic, :only => [:index], :member => {
 	    # Expected Params
 	    #   id: The search query or keys string, keys example:
 	    #     431,884,332,553
@@ -32,14 +32,15 @@ It is equivilent to:
 		  #    t: Tag, tag results accordingly if matches exist, example:
 		  #      	t=age_above_15,age_below_40
 	    :list => :post, 
-	    :clustered_list => :post,
+	    :cluster => :post,
 	    :list_from_keys => :post,
-	    :clustered_list_from_keys => :post
-	}
+	    :cluster_from_keys => :post
+	  },
+   :controller => 'acs/dogs/jquery_basic'
 	end
 
 2.
-Add this to thing.rb
+Add this to dog.rb
   implements_acs_api
 
 3.
@@ -59,35 +60,30 @@ Add this to your view
 
 ABOUT EACH API ACTION
 =====================
-  index: Informs the client what tags and filters are available for the autocompleter
+  index: Informs the client how to map results to attribute names
+         Informs the client what tags and filters are available
   list: Given a search query, yield a list of results
   cluster: Given a search query, yield a list of lists of results
   list_from_keys: Given a set of key value pairs, yield a determinist 
+  cluter_from_keys: Given a set of key value pairs, yield a deterministic list of lists
 
-Tagging and filtering options will need to be exposed in the API by doing something like:
-exposes_acs_api ..., :tag_methods => {:age_above, # looks for a method on model
-:age_below => lambda {|val| age < val},
-:filter_methods => {...NOT SURE HOW THIS WILL WORK...named_scope references???}
+TAGGING & FILTERING
+=================== 
+Any of the above API actions can potentially accept additional parameters formatted like:
+  Tag: 		...&t=age_below_12,age_above_5
+  Filter: ...&f=first_name_begins_with_j,last_name_begins_with_g
 
-}
+Acs::Tag's add tags to results that match the criteria, useful for fast client side filtering of results
+Acs::Filter's constrain the where clause further and only return results that match the filters
 
-* Clustered List: exposes_acs_api expects a :models option that specifies N models that all
-  implement_acs_api, yields more complex JSON structure.
-
-
-API controller params:
-  :q  	Query, what the user typed                               
- OR
-  :k  Primary Keys
-		
-  
-
-Server API Configuration
-  :k  each column on a
+Both tags and filters are configured like follows:
+  :tag_and_filter_methods => [
+    {:method => :age_below,
+     :param_count => 1,
+     :param_requirements => Integer
+    }
+  ]
 
 
-GLOSSARY
-=======
 
-
-Copyright (c) 2010 [name of plugin creator], released under the MIT license
+Copyright (c) 2010 Joe Goggins, released under the MIT license

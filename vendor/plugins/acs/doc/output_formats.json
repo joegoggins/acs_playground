@@ -41,7 +41,7 @@ TODO: WRITE ABOUT TAGS AND FILTERS:
     When constructing the database query for the full-text search on "bla"
     it adds "AND age > 25" to the SQL.  
 
-EXAMPLE 1. A list from a search for "golden"
+EXAMPLE 1. A list from a search for "golden", this is the first hit to the server.
 ==========
 :list
 POST dogs/jquery_basic/list/golden
@@ -49,16 +49,52 @@ POST dogs/jquery_basic/list/golden
   {list:"Dog",
    primary_keys:['id'],
    keys:['id'],
+   attributes:['id','name','species'],
    results:[
-   	 {id:1,  name:"golden retriever", species:"goldy species"},
-	   {id:5,  name:"golden donky", species:"goldy donky species"},
-	   {id:10, name:"golden dangler", species:"the goldest of them all"}
+   	 [1,"golden retriever", "goldy species",]
+	   [5,"golden donky","goldy donky species"],
+	   [10,"golden dangler","the goldest of them all"]
    ]
   }
 
 
 /*
-EXAMPLE 2. A clustered list from a search of "golden"
+EXAMPLE 1.1. The same search like above this a second request, note the missing headers, they
+only happen if the js client hasn't initiated contact yet with the server.  The js client
+is responsible for remembering this mapping.
+:list
+POST dogs/jquery_basic/list/golden ret
+*/
+{list:"Dog",
+ results:[
+ 	 [1,"golden retriever", "goldy species",]
+   [5,"golden donky","goldy donky species"],
+   [10,"golden dangler","the goldest of them all"]
+ ]
+}
+
+/*
+EXAMPLE 1.2. The same search like above on a second request, but now with tags specified.
+The [0,1] reference means that result 0 and 1 do match this tag, the client is responsible for doing something with this.
+:list
+POST dogs/jquery_basic/list/golden ret?t=species_begins_with_g
+*/
+{list:"Dog",
+ tags: {species_begins_with_g:[0,1]},
+ results:[
+ 	 [1,"golden retriever", "goldy species",]
+   [5,"golden donky","goldy donky species"],
+   [10,"golden dangler","the goldest of them all"]
+ ]
+}
+
+/*
+EXAMPLE 2. The about this autocompleter
+TODO: example what the /index action does.
+*/
+
+/*
+EXAMPLE 3. A clustered list from a search of "golden"
 ==========
 :cluster
 POST /jquery_basic/cluster/golden

@@ -1,9 +1,4 @@
 == Welcome to ACS Playground
 
-A place where I mess with my autocompleter server api plugin,
-continue reading at vendor/plugins/acs/doc/README...
-
-Initially, I began the github repo "awesomefest" and "autocompleter_server" as a playground to
-build a solid Autocomplete api agnostic of front end (jquery vs prototype etc) and agnostic of back-end as 
-well.  To make this happen, and to actually be useful, is going to take a while.  I'm shooting to make a worthwhile release on this perhaps sometime this summer.
-
+A place where I mess with my autocompleter server api plugin, there is nothing useful or stable about this
+code at all--there won't be until likely sometime next summer.
