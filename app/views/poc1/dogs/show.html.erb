@@ -1,0 +1,13 @@
+<p>
+  <b>Name:</b>
+  <%=h @dog.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @dog.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_poc1_dog_path(@dog) %> |
+<%= link_to 'Back', poc1_dogs_path %>
