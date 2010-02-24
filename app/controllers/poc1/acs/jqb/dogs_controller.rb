@@ -4,7 +4,7 @@ class Poc1::Acs::Jqb::DogsController < ApplicationController
   def index
     respond_to do |format|
       format.json {render :json => {
-          :model => "Dog",
+          :model => "Dog #{rand}",
           :primary_keys => %w(id),
           :keys => %w(id),
           :mapping => %w(id name),
@@ -31,15 +31,53 @@ class Poc1::Acs::Jqb::DogsController < ApplicationController
       format.html { render :inline => <<-EOS
         <html>
         <body>
-        <input type="textfield" name="poo" />
-
+        <input type="textfield" name="the_textfield" acs_source="/acs/jqb/dogs" id="the_textfield"/>
+        
         <%= javascript_include_tag 'jquery-1.4.2' %>
         <% javascript_tag do %>
+        // The most basic Autocompleter, now simply demonstrating it hits 
+        // the server on load
+        jQuery.fn.extend({
+          bindAcs:function() {
+            this.each(function() {
+              var element = jQuery(this);
+              Jqb.attach(element);
+          })
+        }
+        })
+        var Jqb = {
+          loaded:false,
+          attach:function(element) {
+            element.data("acs_source", element.attr('acs_source'));
+            element.focus(function(){
+              //alert('fa fa focused' + element.data("acs_source"));
+            }),
+            element.keydown(function(event){
+              $.getJSON(element.data("acs_source"), function(json) {
+                alert(json.model);
+              })
+              /*
+              If the first character is ? and there are no characters, then
+              show the keyboard shortcut's for navigating the autocompleter
+              
+              Otherwise propogate the search term to the server
+              
+              */
+              switch (event.keyCode) {
+                // ...
+                // different keys do different things
+                // Different browsers provide different codes
+                // see here for details: http://unixpapa.com/js/key.html    
+                // ...
+              }
+              alert('po');
+              return true;
+              
+            })
+          }
+        }
         $(document).ready(function(){
-          alert('funkem dat you <%= rand %>');
-          $.getJSON('/acs/jqb/dogs', function(json) {
-            alert(json.model);
-          }) 
+          $("input[acs_source]").bindAcs();
         });
 
         <% end %>
