@@ -7,6 +7,14 @@ class Poc1::Dog < ActiveRecord::Base
      :keys => %w(id),
      :mapping => %w(id name)
     }
+  end
+  
+  named_scope :acs_find, lambda {|q| {:conditions => ["name LIKE ?", "#{q}%"]}}
+
+  def to_acs
+    {:model => self.class.to_s,
+     :name => self.name
+    }
   end  
   
 end

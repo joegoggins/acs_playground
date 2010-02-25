@@ -23,8 +23,9 @@ class Poc1::Acs::Jqb::DogsController < ApplicationController
           ]
         }
       ]
+    @poc1_dogs = Poc1::Dog.acs_find(params[:q])
     respond_to do |format|
-      format.json {render :json => @stub1} 
+      format.json {render :json => @poc1_dogs} 
     end
   end
   
@@ -101,12 +102,11 @@ class Poc1::Acs::Jqb::DogsController < ApplicationController
             // Fire off request
             $.getJSON($(keyupped).attr('acs_source'), {q:$(keyupped).val()}, function(json) {
               jQuery.each(json, function() {
-                console.log(this.model);
+                // BIG TODO: <dog> should be dynamic not hard coded...
+                console.log(this.dog.name);
               });
             })
           }
-          
-          
         }
         
         
