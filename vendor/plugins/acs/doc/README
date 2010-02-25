@@ -3,7 +3,7 @@ Acs: Autocompleter Server
 
 A flexible API for implementing autocompleter's in a Rails app.  
 
-It provides a concise way of exposing its own nested RESTful controller and actions in your appication that yield specific JSON formats for autocompleter client's to digest.
+It provides a concise way of exposing its own nested RESTful controller and actions in your application that yield specific JSON formats for autocompleter client's to digest.
 
 It comes with an autocompleter client install script, which allow you to easily install
 different autocompleter flavors to your liking.
