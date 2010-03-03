@@ -1,4 +1,10 @@
 == Welcome to ACS Playground
 
-A place where I mess with my autocompleter server api plugin, there is nothing useful or stable about this
-code at all--there won't be until likely sometime next summer.
+A place to mess with the uber-completer plugin...
+
+RUN `rake app:setup`, it will build stuff and get the playground ready for playtime.
+
+FIRE UP A SERVER, the goodies are linked to from the root page.
+
+IF YOU BUILD SOMETHING WORTH LINKING TO, link to it from the root page of the site and explain it.
+
