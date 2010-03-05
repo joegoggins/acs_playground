@@ -8,6 +8,49 @@ FIRE UP A SERVER, the goodies are linked to from the root page.
 
 IF YOU BUILD SOMETHING WORTH LINKING TO, link to it from the root page of the site and explain it.
 
+== Intent
+
+=== Backend
+We would like to provide a tool for turning any model into an autocompletable instance. This would facilitate different search methodologies for different models, searching across tables/models, and even perhaps autocompletion on database backed models. Easily swappable and createable backends to swap in for your search backend, while still running seamlessly with the rest of the plugin architecture.
+
+This adds functionality over the +auto_complete+ plugin (pulled from rails core), as it is not search limited to one parameter of the model, nor is it search limited to returning one model. It can return and display as much return information to the user as you want.
+
+Potential API:
+    class User < ActiveRecord::Base
+      extend UberSearch::ModelExtensions
+      
+      uber_searchable do |api|
+        api.returns = {:name => :name, :join_date => proc {|x| x.created_at.strftime("%m/%d/%Y")} }
+      
+        api.backend = :MysqlFullTextSearch
+        api.backend.full_text_index = :user_full_text_index
+      end     
+    end
+
+    class Document < ActiveRecord::Base
+      extend UberSearch::ModelExtensions
+      
+      scope :active, { where(:active => true)}
+      scope :published, { where(:published => true) }
+      
+      uber_searchable do |api|
+        api.returns = {:author => :author, :title => :title}
+        
+        api.backend = :Sphinx
+      end
+    end
+    
+    class DocumentController < ApplicationController
+      uber_auto_completion_for :document
+    end
+    
+    class DocumentController < ApplicationController
+      uber_auto_completion_for :document, {:scopes => [:active, :published]}
+      
+      def index
+      end
+      #...
+    end
 
 == LINKS WORTH CONSIDERING FOR INCORPORATION
 http://developer.yahoo.com/yui/autocomplete/
