@@ -40,7 +40,7 @@ Potential API:
       end
     end
     
-    class DocumentController < ApplicationController
+    class Admin::DocumentController < ApplicationController
       uber_auto_completion_for :document
     end
     
