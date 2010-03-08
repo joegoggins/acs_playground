@@ -17,4 +17,13 @@ class Poc1::Dog < ActiveRecord::Base
     }
   end  
   
+  extend SuperAutoCompletes::ActiveModelExtensions
+
+  super_auto_completes do |api|
+    api.returns = {:id => :id}
+
+    api.backend = :MysqlDefaultSearch
+    api.attributes.columns_to_search = self.column_names
+  end
+
 end
