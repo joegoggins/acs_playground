@@ -1,0 +1,16 @@
+<h1>Editing t</h1>
+
+<% form_for(@t) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @t %> |
+<%= link_to 'Back', ts_path %>
